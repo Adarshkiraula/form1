@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+        
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=0, shrink-to-fit=no">
+            <title>HomePage</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+            <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+                integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link rel="stylesheet" href="">
+            <script>
+                    function validateForm()
+                    {
+                       var name = document.forms["myForm"]["name"].value;
+                        if (name==null && name == "") 
+                        {
+                            alert("Name must be filled out");
+                            return false;
+                        }
+                        if(!isNaN(name))
+                        {
+                            alert("Alphabet only in name field");
+                            return false;
+                        }
+                        
+                        var age = document.forms["myForm"]["age"].value;
+                        if (age == "") 
+                        {
+                            alert("Age must be filled out");
+                            return false;
+                        }
+                        if(isNaN(age))
+                        {
+                            alert("Enter numeric value only in age field");
+                            return false;
+                        }
+                        if(age.length > 2)
+                        {
+                            alert("age should be of 2 digit");
+                            return false;
+                        }
+                        var x = document.forms["myForm"]["email"].value;
+                        if (x == "") 
+                        {
+                            alert("Email must be filled out");
+                            return false;
+                        }
+                        var atposition=x.indexOf("@");  
+                        var dotposition=x.lastIndexOf(".");  
+                        if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+                        {  
+                           alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+                           return false;  
+                        } 
+                        var passwd = document.forms["myForm"]["pwd"].value;
+                        if (passwd == "") 
+                        {
+                            alert("Password must be filled out");
+                            return false;
+                        }
+                         if(passwd.length<6)
+                        {
+                            alert("Password must be at least 6 characters long");
+                            return false;
+                        }
+                        var phno = document.forms["myForm"]["phno"].value;
+                        if (phno == "") 
+                        {
+                            alert("Phone number must be filled out");
+                            return false;
+                        }
+                        if(isNaN(phno))
+                        {
+                            alert("Enter numeric value only in phoneno field");
+                            return false;
+                        }
+                        if(phno.length != 10)
+                        {
+                            alert("Phone number should be of 10 digits");
+                            return false;
+                        }
+                    }
+            </script>
+        </head>
+        <body>
+            <div  class="container">
+                <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="name" class="form-control" id="name" required>
+                        </div>
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <input type="age" class="form-control" id="age" required>
+                            </div>
+                          
+                       <div class="form-group">
+                          <label for="email">Email address:</label>
+                          <input type="email" class="form-control" id="email"required>
+                        </div>
+                        <div class="form-group">
+                          <label for="pwd">Password:</label>
+                          <input type="password" class="form-control" id="pwd"required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phno">Phone Number:</label>
+                            <input type="phno" class="form-control" id="phno"required>
+                        </div>
+                        <div class="checkbox">
+                               <label><input type="checkbox"> Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                </form> 
+                
+            </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>      
+        </body>
+</html>
